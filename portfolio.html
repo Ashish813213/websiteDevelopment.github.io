@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-transform: capitalize;
+            transition: all 0.3s;
+            font-family: 'Inconsolata', monospace;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        body {
+            width: 100%;
+            background-color: #292928;
+        }
+
+        .header {
+            width: 100%;
+            height: 70px;
+            background-color: grey;
+            display: flex;
+            position: relative;
+        }
+
+        .logo {
+            padding: 5px;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo label {
+            font-size: 35px;
+            color: white;
+        }
+
+        .navigation {
+            margin: auto 10px;
+        }
+        nav ul li {
+            font-size: 27px;
+            display: inline-block;
+            list-style: none;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: white;
+            margin: 5px;
+        }
+
+        ul li a:hover {
+            color: orange;
+        }
+
+        #tag {
+            font-size: 28px;
+            color: #fff;
+            display: none;
+            text-align: end;
+        }
+
+        .page1 {
+            height: 100vh;
+            background: linear-gradient(#00000060, #00000060), url(https://bit.ly/3pxjf7w)center no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page1 input {
+            width: 350px;
+            height: 45px;
+            border-radius: 25px;
+            border: none;
+            padding: 12px;
+            font-size: 23px;
+        }
+
+        .title {
+            text-align: center;
+            color: white;
+            margin: 12px 0px;
+        }
+
+        .holder {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+           height: 60vh;
+        }
+
+        .holder .hold {
+            text-align: center;
+            background-color: #4fede2;
+            margin: 3px;
+            height: 200px;
+            width: 450px;
+            border-radius: 27px;
+            /* animation: boxes 2s linear 1; */
+            box-shadow: 7px 15px 1px rgba(0, 0, 0, 0.3);
+        }
+        .animate1{
+            animation: boxes 2s linear 1;
+        }
+        .holder .hold:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .holder .hold:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes boxes {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            90%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .hold .holdT {
+            margin: 12px 0px;
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        @media only screen and (max-width:500px) {
+
+        }
+
+        .logC {
+            min-height: 560px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            width: 0px;
+            transition: all 0.4s;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        .logC .login {
+            height: 450px;
+            width: 350px;
+            background-color: #fff;
+            padding: 12px;
+            border-radius: 20px;
+        }
+
+        .inputs {
+            margin: 12px 0px;
+            font-size: 22px;
+        }
+
+        .inputs input {
+            width: 100%;
+            height: 39px;
+            border: 1px solid black;
+        }
+
+        #login {
+            height: 45px;
+            width: 100%;
+            background-color: rgb(64, 163, 64);
+            font-size: 24px;
+            cursor: pointer;
+            margin: 25px 0px;
+        }
+
+        .inputs span {
+            text-decoration: none;
+            color: blue;
+            font-size: 15px;
+            font-weight: 900;
+            margin: 6px 0px 0px 0px;
+        }
+
+        .login p {
+            text-decoration: underline;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        #not {
+            font-size: 18px;
+            font-weight: 300;
+            margin: 12px 0;
+            color: red;
+            text-decoration: none;
+        }
+
+        #not:hover {
+            text-decoration: underline;
+        }
+
+        .skillc {
+            margin: 29px;
+            width: calc(100%-29px);
+            padding: 25px;
+            background-color: rgb(247, 250, 252);
+            border-radius: 20px;
+        }
+
+        .skill .bar {
+            height: 30px;
+            width: 100%;
+            background-color: #262648;
+            border-radius: 25px;
+            padding: 1px;
+            margin: 10px 0px;
+
+        }
+
+        .skill p {
+            font-size: 20px;
+            color: #333f00;
+            font-weight: 600;
+        }
+
+        .barS {
+            height: 27px;
+            width: 90%;
+            margin-top: auto;
+            background: linear-gradient(#acac3a, white, #848433);
+            border-radius: 25px;
+           
+        }
+        .animate2{
+            animation: skill1 2s 1 linear;
+        }
+        .bars2 {
+            width: 80%;
+        }
+
+        .bars3 {
+            width: 70%;
+        }
+
+        .bars4 {
+            width: 60%;
+        }
+
+        .bars5 {
+            width: 50%;
+        }
+
+        @keyframes skill1 {
+            0% {
+                width: 0%;
+            }
+        }
+
+        .aboutC {
+            padding: 29px
+        }
+
+        .about {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            font-weight: 900;
+            font-size: 25px;
+            background-color: #ffd700;
+            border-radius: 15px;
+            cursor: pointer;
+            flex-wrap: wrap;
+            padding: 12px;
+        }
+
+        #size {
+            font-size: 30px;
+            color: blue;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .meimg {
+            width: 350px;
+            height: 350px;
+            display: flex;
+            align-items: center;
+        }
+
+        .meimg img {
+            width: 100%;
+            clip-path: circle(50% at 50% 50%);
+        }
+
+        .aboutT {
+            font-size: 22px;
+            text-align: center;
+        }
+        .contactC {
+            padding: 22px;
+            width: 100%;
+        }
+
+        .contact {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .contact form {
+            height: 400px;
+            width: 330px;
+            padding: 12px;
+            border-radius: 19px;
+            background: #4e965a;
+            box-shadow: 30px 30px 3px #101010,
+                -30px -30px 0px #424240;
+            color: white;
+        }
+
+        .inputC {
+            width: 100%;
+        }
+
+        .inputC input {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 4px;
+            border: none;
+            border-bottom: 2px solid #ffffff;
+            background-color: transparent;
+            color: #ffffff;
+            font-size: 16px;
+            padding: 12px;
+        }
+
+        #feed {
+            height: 100px;
+        }
+
+        .inputC button {
+            height: 40px;
+            width: 100%;
+            outline: none;
+            border: none;
+            border-radius: 12px;
+            background-color: #63ff65;
+        }
+        footer{
+            height: 300px;
+            width: 100%;
+            /* background-color: #153451; */
+            padding: 25px 0px 0px 0px;
+            margin-top: 25px;
+            position: relative;
+        }
+        footer::before{
+
+        }
+        footer svg {
+            z-index: -888;
+            width: 100%;
+            height: auto;
+            position: absolute;
+            display: inline;
+            /* height: 100%; */
+        }
+
+        .footer {
+            font-size: 20px;
+            text-align: center;
+            
+        }
+        .links{
+            margin-bottom: 10px;
+        }
+        .footer a {
+            text-decoration: none;
+            color: white;
+            opacity: 0.7;
+        }
+        .footer a:hover{
+            text-decoration: underline;
+            color: white;
+            opacity: 1;
+        }
+        .follow{
+            height: 27px;
+            width: 27px;
+            margin:1px;
+            /* mix-blend-mode: difference; */
+            opacity: 0.7;
+        }
+        .follow:hover{
+            opacity: 1;
+        }
+        @media screen and (max-width:600px) {
+            #tag{
+                display: block;
+            }
+            nav ul {
+                position: absolute;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: rgba(53, 119, 180, 0.377);
+                top: 70px;
+                left:0;
+                backdrop-filter: blur(2px);
+                height: 0px;
+                overflow: hidden;
+
+            }
+            nav ul li {
+                display: block;
+                text-align: center;
+                margin: 12px 0 12px 0;
+                font-size: 30px;
+                padding: 5px;
+            }
+            .closing{
+                height: 0px;
+            }
+            .navOPEN {
+                height: calc(100vh - 70px);
+            }
+
+        }
+        @media only screen and (max-width:1000px) {
+            .holder{
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <label>its me</label>
+        </div>
+        <nav class="navigation">
+            <label id="tag">&#9776;</label>
+            <ul id="navUL" class="check closing">
+                <li><a href="#">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#contact">contact</a></li>
+                <li><a href="#" id="logbtn">login</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- https://www.toppr.com/ask/question/the-sum-of-three-numbers-is-6-if-we-multiply/ -->
+    <div id="content" class="page1">
+        <input type="text">
+    </div>
+    <h1 class="title">our services</h1>
+    <div class="holder">
+        <div class="hold" id="card1">
+            <p class="holdT">web designing</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ducimus quibusdam consectetur adipisci
+                quam voluptas. Fugiat corporis saepe voluptatem enim doloribus beatae voluptas quo obcaecati.</p>
+        </div>
+        <div class="hold" id="card2">
+            <p class="holdT">web designing</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ducimus quibusdam consectetur adipisci
+                quam voluptas. Fugiat corporis saepe voluptatem enim doloribus beatae voluptas quo obcaecati.</p>
+        </div>
+        <div class="hold" id="card3">
+            <p class="holdT">web designing</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ducimus quibusdam consectetur adipisci
+                quam voluptas. Fugiat corporis saepe voluptatem enim doloribus beatae voluptas quo obcaecati.</p>
+        </div>
+    </div>
+    <!-- here starts the login form  -->
+    <div class="logC" id="logContent">
+        <div class="login">
+            <form action="">
+                <div class="inputs">
+                    <label for="email">your email</label><br>
+                    <input type="email" id="email">
+                </div>
+                <div class="inputs">
+                    <label for="pass">password</label><br>
+                    <input type="password" id="pass">
+                    <span>forgot password?</span>
+                </div>
+                <div class="inputs">
+                    <input type="submit" value="login" id="login">
+                </div>
+            </form>
+            <p>dont have a account? <a href="#">create</a></p>
+            <p id="not">not now</p>
+        </div>
+    </div>
+    <!-- and here ends -->
+    <h1 class="title">My skills</h1>
+    <!-- skill bar starts here  -->
+    <div class="skillc">
+        <div class="skill">
+            <p>html</p>
+            <div class="bar">
+                <div class="barS bars1" id="bar1"></div>
+            </div>
+            <p>css</p>
+            <div class="bar">
+                <div class="barS bars2" id="bar2"></div>
+            </div>
+            <p>js</p>
+            <div class="bar">
+                <div class="barS bars3" id="bar3"></div>
+            </div>
+            <p>seo</p>
+            <div class="bar">
+                <div class="barS bars4" id="bar4"></div>
+            </div>
+            <p>c++</p>
+            <div class="bar">
+                <div class="barS bars5" id="bar5"></div>
+            </div>
+        </div>
+    </div>
+    <!-- skillbar ends here -->
+
+    <div class="aboutC" id="about">
+        <div class="about">
+            <div class="meimg">
+                <img src="https://i.pinimg.com/originals/c5/fa/b5/c5fab55fd2ae9c399b5693055e6e75bf.png" alt="">
+            </div>
+            <div class="aboutTC">
+                <p class="aboutT">
+                    my name is <span id="size">ashish sharma</span> <br>
+                    knows web developing very well!! <br>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="contactC" id="contact">
+        <div class="contact">
+            <form action="">
+                <div class="inputC">
+                    <label for="emailC ">enter email</label>
+                    <input type="email" id="emailC" required>
+                </div>
+                <div class="inputC">
+                    <label for="feed">your opinion</label>
+                    <input type="text" id="feed">
+                </div>
+                <div class="inputC">
+                    <button type="submit">send</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <footer>
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#5f00ca" fill-opacity="1" d="M0,128L60,149.3C120,171,240,213,360,234.7C480,256,600,256,720,224C840,192,960,128,1080,96C1200,64,1320,64,1380,64L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#5000ca" fill-opacity="1" d="M0,160L48,165.3C96,171,192,181,288,154.7C384,128,480,64,576,53.3C672,43,768,85,864,112C960,139,1056,149,1152,160C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg> -->
+
+        <div class="footer">
+            <h2 class="title" >useful link</h2>
+            <div class="links">
+                <a href="#">link</a>
+                <a href="#">link</a>
+                <a href="#">link</a>
+                <a href="#">link</a>
+            </div>
+            <h2 class="title">follow us on</h2>
+            <div class="followC">
+                <a href="instagram">
+                <img class="follow"
+                src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-512.png"
+                alt=""></a>
+                <a href="instagram">
+            <img src="https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-512.png"
+                alt="" class="follow"></a>
+                <a href="instagram">
+            <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-512.png"
+                alt="" class="follow"></a>
+                <a href="instagram">
+            <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter_colored_svg-64.png"
+                alt="" class="follow"></a>
+            </div>
+        </div>
+
+    </footer>
+    <script>
+        let tag = document.getElementById('tag');
+        let nav = document.getElementById('navUL');
+        // tag.addEventListener('click',()=>{
+        //     if(nav.style.height == '0px'){
+        //         nav.style.height = "calc(100vh - 70px)";
+        //     }
+        //     else{
+        //         nav.style.height = "0px";
+        //     }
+        // })
+        tag.addEventListener('click',()=>{
+            if (nav.classList.contains('closing')) {
+                nav.classList.replace('closing','navOPEN');
+            }
+            else{
+                nav.classList.add("closing")
+                nav.classList.remove('navOPEN')
+            }
+        })
+        let logBtn = document.getElementById('logbtn')
+        let log = document.getElementById('logContent')
+        let notN = document.getElementById('not')
+        logBtn.addEventListener('click', () => {
+            if (log.style.width == "0%") {
+                log.style.width = "100%" ;
+                log.style.opacity = "1";
+            }
+            else {
+                log.style.width = "0%"
+                log.style.opacity = "0"
+            }
+        })
+        notN.addEventListener('click', () => {
+            if (log.style.width == "0%") {
+                log.style.width = "100%" ;
+                log.style.opacity = "1";
+            }
+            else {
+                log.style.width = "0%"
+                log.style.opacity = "0"
+            }
+        })
+        window.addEventListener('scroll',(e)=>{
+            let scrollVAlue = pageYOffset;
+            let card1 = document.getElementById('card1')
+            let card2 = document.getElementById('card2')
+            let card3 = document.getElementById('card3')
+            let bar1 = document.getElementById('bar1');
+            let bar2 = document.getElementById('bar2');
+            let bar3 = document.getElementById('bar3');
+            let bar4 = document.getElementById('bar4');
+            let bar5 = document.getElementById('bar5');
+
+            if(scrollVAlue => 180){
+                card1.classList.add('animate1');
+                card2.classList.add('animate1');
+                card3.classList.add('animate1');
+            }
+            else{
+                card1.classList.remove('animate1');
+                card2.classList.remove('animate1');
+                card3.classList.remove('animate1');
+            }
+            if (scrollVAlue => 550 ) {
+                bar1.classList.add('animate2');
+                bar2.classList.add('animate2');
+                bar3.classList.add('animate2');
+                bar4.classList.add('animate2');
+                bar5.classList.add('animate2');
+            }
+            else{
+                bar1.classList.remove('animate2');
+                bar2.classList.remove('animate2');
+                bar3.classList.remove('animate2');
+                bar4.classList.remove('animate2');
+                bar5.classList.remove('animate2');
+            }
+        })
+    </script>
+</body>
+
+</html>
