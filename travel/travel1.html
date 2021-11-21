@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>travel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="travel.css">
+    <style>
+        * {
+            transition: 200ms;
+        }
+
+        body {
+            background: linear-gradient(#8598ff, #312efc);
+        }
+
+        #search {
+            /* background-color: #c7bebe; */
+            /* border: 3px solid yellow; */
+            height: 50px;
+        }
+
+        .search {
+            display: flex;
+            margin-right: auto;
+            background-color: lightblue;
+        }
+
+        #searchbar {
+            border: none;
+            border-radius: 18px;
+            padding: 4px;
+            font-weight: 900;
+        }
+
+        #go {
+            width: 30px;
+            margin: 6px;
+        }
+
+        #submit {
+            display: none;
+        }
+
+        .helo {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cards {
+            height: 226px;
+            width: 300px;
+            overflow: hidden;
+            padding: 3px;
+            transition: all 1s ease-in;
+        }
+
+        .cards-img {
+            width: 100%;
+            margin: 9px;
+            height: 210px;
+            transition: all .3s;
+        }
+
+        .cards-img img {
+            width: 100%;
+        }
+
+        .tcard {
+            text-align: center;
+            color: blue;
+        }
+
+        .plimg {
+            height: 210px;
+            border-radius: 24px;
+            opacity: 0.8;
+            image-rendering: pixelated;
+        }
+
+        .plimg:hover {
+            border-radius: 5px;
+            transform: scale(1.06);
+            opacity: 1;
+            image-rendering: none;
+        }
+
+        .cards:hover {
+            height: 430px;
+            background-color: #d3d2dd;
+            padding: 0;
+        }
+
+        .content {
+            animation: animate 2s linear 1;
+            position: relative;
+        }
+        .learn{
+            text-align: center;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        @keyframes animate {
+            0% {
+                bottom: -150px;
+                opacity: 0.2
+            }
+
+            100% {
+                bottom: 0px;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="over">
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/128/2991/2991148.png" alt="google">
+        </div>
+        <div class="nav">
+            <nav class="menu">
+                <input type="checkbox" id="res">
+                <label for="res" class="tag" id="tag">&#9776;</label>
+                <ul class="uul">
+                    <li class="lli"><a href="index.html" id="1">home</a></li>
+                    <li class="lli"><a href="about.html" id="2">about</a></li>
+                    <li class="lli"><a href="travel1.html" class="active" id="3">data</a></li>
+                    <li class="lli"><a href="contact.html" id="4">contact us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div id="search">
+        <header class="search">
+            <div class="helo">
+                <input type="search" name="search" id="searchbar" list="places" placeholder="seach">
+                <input type="submit" value="submit" id="submit">
+                <label for="submit">
+                    <img src="https://image.flaticon.com/icons/png/256/482/482631.png" alt="" id="go">
+                </label>
+                <datalist id="places">
+                    <option value="india">india</option>
+                    <option value="delhi">delhi</option>
+                    <option value="mumbai">mumbai</option>
+                    <option value="ladakh">ladakh</option>
+                </datalist>
+            </div>
+        </header>
+    </div>
+    <h1 style="text-align:center; color:#FFFAFA ;">knowed places of india </h1>
+    <div class="content">
+        <div class="cards">
+            <div class="cards-img">
+                <img src="https://www.planetware.com/wpimages/2019/08/india-mumbai-top-attractions-take-pictures-taj-mahal-palace-mumbai.jpg"
+                    alt="" class="plimg">
+            </div>
+            <h2 class="tcard">mumbai</h2>
+            <p class="optext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quibusdam, ducimus
+                aspernatur sit temporibus quas magni repellendus quisquam quasi, quia ratione! Commodi molestiae placeat
+                velit.</p>
+            <p id="01" class="learn">Learn more</p>
+        </div>
+        <div class="cards">
+            <div class="cards-img">
+                <img src="https://www.planetware.com/photos-large/IND/india-delhi-red-fort.jpg" alt="" class="plimg">
+            </div>
+            <h2 class="tcard">delhi</h2>
+            <p class="optext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quibusdam, ducimus
+                aspernatur sit temporibus quas magni repellendus quisquam quasi, quia ratione! Commodi molestiae placeat
+                velit.</p>
+            <p id="02" class="learn">Learn more</p>
+        </div>
+        <div class="cards">
+            <div class="cards-img">
+                <img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2018/07/amritsar-3083693_960_720.jpg"
+                    alt="" class="plimg">
+            </div>
+            <h2 class="tcard">punjab</h2>
+            <p class="optext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quibusdam, ducimus
+                aspernatur sit temporibus quas magni repellendus quisquam quasi, quia ratione! Commodi molestiae placeat
+                velit.</p>
+            <p id="03" class="learn">Learn more</p>
+        </div>
+        <div class="cards">
+            <div class="cards-img">
+                <img src="https://www.trawell.in/admin/images/upload/76393836Agra_Main.jpg" alt="" class="plimg">
+            </div>
+            <h2 class="tcard">uttar pradesh</h2>
+            <p class="optext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quibusdam, ducimus
+                aspernatur sit temporibus quas magni repellendus quisquam quasi, quia ratione! Commodi molestiae placeat
+                velit.</p>
+            <p id="04" class="learn">Learn more</p>
+        </div>
+        <div class="cards">
+            <div class="cards-img">
+                <img src="https://images.squarespace-cdn.com/content/v1/5ab61c67ec4eb7ab7a2f40f2/1533430607777-993DG5CE9X0GREMOMBI4/hazratbal-pirpanjals-dallake?format=1000w"
+                    alt="" class="plimg">
+            </div>
+            <h2 class="tcard">kashmir</h2>
+            <p class="optext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quibusdam, ducimus
+                aspernatur sit temporibus quas magni repellendus quisquam quasi, quia ratione! Commodi molestiae placeat
+                velit.</p>
+            <p id="05" class="learn">Learn more</p>
+        </div>
+        <div class="cards">
+            <div class="cards-img">
+                <img src="https://cdn.theculturetrip.com/wp-content/uploads/2017/10/karnataka-pattadakal.jpg" alt=""
+                    class="plimg">
+            </div>
+            <h2 class="tcard">karnataka</h2>
+            <p class="optext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quibusdam, ducimus
+                aspernatur sit temporibus quas magni repellendus quisquam quasi, quia ratione! Commodi molestiae placeat
+                velit.</p>
+            <p id="06" class="learn">Learn more</p>
+        </div>
+        <div class="cards">
+            <div class="cards-img">
+                <img src="https://www.topbuzz.in/wp-content/uploads/2016/07/Assam.jpg" alt="" class="plimg">
+            </div>
+            <h2 class="tcard">assam</h2>
+            <p class="optext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quibusdam, ducimus
+                aspernatur sit temporibus quas magni repellendus quisquam quasi, quia ratione! Commodi molestiae placeat
+                velit.</p>
+            <p id="07" class="learn">Learn more</p>
+        </div>
+        <div class="cards">
+            <div class="cards-img">
+                <img src="https://toib.b-cdn.net/wp-content/uploads/2018/07/khajuraho-1.jpg" alt="" class="plimg">
+            </div>
+            <h2 class="tcard">madhya pardesdh</h2>
+            <p class="optext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quibusdam, ducimus
+                aspernatur sit temporibus quas magni repellendus quisquam quasi, quia ratione! Commodi molestiae placeat
+                velit.</p>
+            <p id="08" class="learn">Learn more</p>
+        </div>
+        <div class="cards">
+            <div class="cards-img">
+                <img src="https://www.holidify.com/images/cmsuploads/compressed/Ajgabinath_20181219132117.JPG" alt=""
+                    class="plimg">
+            </div>
+            <h2 class="tcard">bihar</h2>
+            <p class="optext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quibusdam, ducimus
+                aspernatur sit temporibus quas magni repellendus quisquam quasi, quia ratione! Commodi molestiae placeat
+                velit.</p>
+            <p id="09" class="learn">Learn more</p>
+        </div>
+        <div class="cards">
+            <div class="cards-img">
+                <img src="https://www.clubmahindra.com/blog/media/section_images/shuttersto-1a47b83e6a03271.jpg" alt=""
+                    class="plimg">
+            </div>
+            <h2 class="tcard">shimla</h2>
+            <p class="optext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quibusdam, ducimus
+                aspernatur sit temporibus quas magni repellendus quisquam quasi, quia ratione! Commodi molestiae placeat
+                velit.</p>
+            <p id="10" class="learn">Learn more</p>
+        </div>
+        <div class="cards">
+            <div class="cards-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Shyok_river_Ladakh.jpg/250px-Shyok_river_Ladakh.jpg"
+                    alt="" class="plimg">
+            </div>
+            <h2 class="tcard">ladakh</h2>
+            <p class="optext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quibusdam, ducimus
+                aspernatur sit temporibus quas magni repellendus quisquam quasi, quia ratione! Commodi molestiae placeat
+                velit.</p>
+            <p id="11" class="learn">Learn more</p>
+        </div>
+    </div>
+    <div class="foot">
+        <footer class="footer1">
+            <ul class="ful">
+                <li class="fli"><a href="#" class="links">links</a></li>
+                <li class="fli"><a href="#" class="links">links</a></li>
+                <li class="fli"><a href="#" class="links">links</a></li>
+                <li class="fli"><a href="#" class="links">links</a></li>
+            </ul>
+        </footer>
+        <h3 class="h3">follow us</h3>
+        <img class="follow"
+            src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-512.png" alt="">
+        <img src="https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-512.png" alt=""
+            class="follow">
+        <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-512.png" alt=""
+            class="follow">
+        <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter_colored_svg-64.png" alt=""
+            class="follow">
+        <p class="created">created and upgraded by Mr.Ashish &copy;</p>
+    </div>
+    <script src="travel.js"></script>
+    <script>
+        let card1 = document.getElementById('01');
+        let card2 = document.getElementById('02');
+        let card3 = document.getElementById('03');
+        let card4 = document.getElementById('04');
+        let card5 = document.getElementById('05');
+        let card6 = document.getElementById('06');
+        let card7 = document.getElementById('07');
+        let card8 = document.getElementById('08');
+        let card9 = document.getElementById('09');
+        let card10 = document.getElementById('10');
+        let card11 = document.getElementById('11');
+        let features = "width=500 ,height=500, top = 170px ,left = 170px "
+        card1.addEventListener('click', () => {
+
+            window.open("https://en.wikipedia.org/wiki/Mumbai", 'travelOn', features)
+        })
+        card2.addEventListener('click', () => {
+
+            window.open("https://en.wikipedia.org/wiki/Delhi", 'travelOn', features)
+        })
+        card3.addEventListener('click', () => {
+
+            window.open("https://en.wikipedia.org/wiki/Punjab", 'travelOn', features)
+        })
+        card4.addEventListener('click', () => {
+
+            window.open("https://en.wikipedia.org/wiki/Uttar_Pradesh", 'travelOn', features)
+        })
+        card5.addEventListener('click', () => {
+
+            window.open("https://en.wikipedia.org/wiki/Kashmir", 'travelOn', features)
+        })
+        card6.addEventListener('click', () => {
+
+            window.open("https://en.wikipedia.org/wiki/Karnataka", 'travelOn', features)
+        })
+        card7.addEventListener('click', () => {
+
+            window.open("https://en.wikipedia.org/wiki/Assam", 'travelOn', features)
+        })
+        card8.addEventListener('click', () => {
+
+            window.open("https://en.wikipedia.org/wiki/Madhya_Pradesh", 'travelOn', features)
+        })
+        card9.addEventListener('click', () => {
+
+            window.open("https://en.wikipedia.org/wiki/Bihar", 'travelOn', features)
+        })
+        card10.addEventListener('click', () => {
+
+            window.open("https://en.wikipedia.org/wiki/Shimla", 'travelOn', features)
+        })
+        card11.addEventListener('click', () => {
+
+            window.open("https://en.wikipedia.org/wiki/Ladakh", 'travelOn', features)
+        })
+    </script>
+</body>
+
+</html>
