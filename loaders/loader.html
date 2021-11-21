@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loader</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        section{
+            min-height: 100vh;
+            /* width: 100%; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: chnage 4s steps(1) infinite ;
+        }
+        @keyframes chnage {
+            0%{
+                background-color: #0f0;
+            }
+            25%{
+                background-color: #f0f;
+            }
+            50%{
+                background-color: #ff0;
+            }
+            100%{
+                background-color: #ff4786;
+            }
+            
+        }
+        .loader{
+            position: relative;
+            width: 50px;
+            height: 50px;
+            background: #000;
+            animation: anim 1s linear infinite ;
+        }
+        @keyframes anim {
+            0%{
+                transform: rotate(90deg)
+            }
+            50%,100%{
+                transform: rotate(0deg)
+            }
+        }
+        .loader div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            animation: animaton 
+            1s linear infinite;
+        }
+        @keyframes animaton {
+            0%{
+                transform: rotate(0deg)
+            }
+            50% ,100%{
+                transform: rotate(180deg)
+            }
+        }
+       .loader div:nth-child(1){
+            top: -100%;
+            left: -2px;
+            transform-origin:bottom right ;
+        }
+        .loader div:nth-child(1)::before{
+            background-color: #ff0;
+        }
+        .loader div:nth-child(2){
+            right: -100%;
+            top: -2px;
+            transform-origin:bottom left ;
+        }
+        .loader div:nth-child(2)::before{
+            background-color: #f0f;
+        }
+        .loader div:nth-child(3){
+            bottom: -100%;
+            left: 2px;
+            transform-origin:top left ;
+        }
+        .loader div:nth-child(3)::before{
+            background-color: #0f0;
+        }
+        .loader div:nth-child(4){
+            left: -100%;
+            top: 2px;
+            transform-origin:top right ;
+        }
+        .loader div:nth-child(4)::before{
+            background-color: #ff4786;
+        }
+        .loader:before,.loader div::before{
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </section>
+    lore
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>happy diwal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-transform: capitalize;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .holder {
+            height: 100vh;
+            width: 100%;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .holder span {
+            font-size: 55px;
+            text-shadow: 12px 4px 10px #50f0ca, 0px 0px 120px #50f0ca,
+                0px 0px 100px #50f0ca,
+                0px 0px 130px #50f0ca,
+                0px 0px 150px #50f0ca,
+                0px 0px 170px #50f0ca;
+            animation: texta 5s linear infinite;
+            letter-spacing: 2px;
+            color: transparent;
+        }
+
+        @keyframes texta {
+            0% {
+                color: #fff;
+                filter: blur(0px) hue-rotate(0deg);
+            }
+
+            30%,
+            70% {
+                color: #fff;
+                filter: hue-rotate(360deg);
+
+            }
+
+            100% {
+                color: transparent;
+                filter: hue-rotate(0deg);
+            }
+        }
+
+        .l6 {
+            margin-left: 22px;
+        }
+
+        .pl {
+            font-size: 60px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="holder">
+        <span class="letter l1">h</span><span class="letter l2">a</span><span class="letter l3">p</span><span
+            class="letter l4">p</span><span class="letter l5">y</span><span class="letter l6">d</span><span
+            class="letter l7">i</span><span class="letter l8">w</span><span class="letter l9">a</span><span
+            class="letter l10">l</span><span class="letter l11">i</span>
+    </div>
+    <div class="holder">
+        <p class="pl">
+            happy diwali
+        </p>
+
+    </div>
+</body>
+
+</html>

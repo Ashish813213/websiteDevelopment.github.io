@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #181717;
+        }
+        .box{
+            height: 400px;
+            width: 300px;
+            color: white;
+            /* background-color: blue; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border: 2px solid #181717;
+            overflow: hidden;
+        }
+        .box h1 {
+            font-size: 109px;
+            font-weight: 900;
+            z-index: 4;
+        }
+        .box::before{
+            content: '';
+            position: absolute;
+            height: 150%;
+            width: 50%;
+            background: linear-gradient(75deg,red , blue);
+            animation: animat 3s linear infinite;
+        }
+        @keyframes animat {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        .box::after{
+            content: '';
+            position: absolute;
+            background-color:#5f6deb;
+            width: 95%;
+            height: 95%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>95</h1>
+    </div>
+</body>
+</html>
