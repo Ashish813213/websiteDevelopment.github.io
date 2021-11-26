@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>traveleer</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Dancing+Script:wght@500&family=Fruktur&family=Rock+Salt&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;1,300&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="travel.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-transform: capitalize;
+            box-sizing: border-box;
+            font-family: 'Roboto Mono', monospace;
+            transition: all 0.3s ease-in-out;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(#fcc03e, #fcc03e, #e79c10, #f6491f);
+            width: 100%;
+        }
+        .fullS {
+            height: 70vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .fullS .imgS {
+            height: 400px;
+            width: 400px;
+
+        }
+
+        .imgS img {
+            width: 100%;
+        }
+
+        .fullS p {
+            font-size: 50px;
+            color: white;
+            font-family: 'Comforter Brush', cursive;
+            text-align: center;
+        }
+
+        .eset {
+            height: 2px;
+            width: 60%;
+            background-color: #826d6d;
+            margin: auto;
+        }
+
+        .title {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .services {
+            height: clamp(auto , 50vh, 50vh);
+            width: 100%;
+        }
+
+        .services .cardS {
+            height: auto;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            color: white;
+        }
+
+        .cardS .card .image {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+            margin: auto;
+
+        }
+
+        .card .image img {
+            width: 100%;
+            transform: scale(1.12);
+        }
+
+        .cardS .card {
+            background-color: #7100ff82;
+            margin: 0 10px;
+            height: 350px;
+            width: 290px;
+            text-align: center;
+            border-radius: 0px 0 20px 0px;
+        }
+
+        .card .image img:hover {
+            transform: scale(1.4);
+        }
+
+        .aboutC {
+            padding: 29px;
+            width: 100%;
+        }
+
+        .about {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            font-weight: 900;
+            font-size: 25px;
+            background-color: #ffd700;
+            border-radius: 15px;
+            cursor: pointer;
+            flex-wrap: wrap;
+            padding: 12px;
+        }
+
+        #size {
+            font-size: 30px;
+            color: blue;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .meimg {
+            width: 350px;
+            height: 350px;
+            display: flex;
+            align-items: center;
+        }
+
+        .meimg img {
+            width: 100%;
+            clip-path: circle(50% at 50% 50%);
+        }
+
+        .aboutT {
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .contact {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .contact .form {
+            padding: 12px;
+        }
+
+        .contact .form form {
+            height: 350px;
+            width: 300px;
+            background-color: #52d39b;
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: 30px 30px 2px #abff00,
+                -30px -30px 0px #2b8aa2;
+        }
+
+        .form label {
+            font-size: 25px;
+            color: black;
+            font-weight: 900;
+        }
+
+        .form input {
+            height: 26px;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid black;
+            background-color: transparent;
+            font-weight: 900;
+            padding: 8px;
+        }
+
+        .sub {
+            width: 100%;
+            padding: 5px;
+            margin-top: 12px;
+        }
+
+        .sub button {
+            width: 100%;
+            height: 30px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 12px;
+        }
+
+
+        @media screen and (max-width:600px) {
+            #tag {
+                display: block;
+            }
+
+            nav ul {
+                position: absolute;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: rgba(53, 119, 180, 0.377);
+                top: 70px;
+                left: 0;
+                backdrop-filter: blur(2px);
+                height: 0px;
+                overflow: hidden;
+            }
+
+            nav ul li {
+                display: block;
+                text-align: center;
+                margin: 12px 0 12px 0;
+                font-size: 30px;
+                padding: 5px;
+            }
+
+            .closing {
+                height: 0px;
+            }
+
+            .navOPEN {
+                height: calc(100vh - 70px);
+            }
+
+            .cardS .card {
+                margin: 10px 0px;
+            }
+
+            .fullS {
+                height: auto;
+            }
+
+        }
+
+        @media only screen and (max-width:900px) {
+            .services {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <label for="logo">strts</label>
+        </div>
+        <div class="navC">
+            <nav>
+                <label for="nav" id="tag">&#9776;</label>
+                <ul id="menuLIST" class="navClosing">
+                    <li><a href="#">home</a></li>
+                    <li><a href="about.html">about</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                    <li id="lightwala"><a href="travel1.html">plan</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="fsect fullS">
+        <div class="imgS">
+            <img src="https://www.pngmart.com/files/17/Travel-Icon-PNG-Transparent-Image.png" alt="">
+        </div>
+        <p>welcome you traveller</p>
+    </div>
+    <div class="eset"></div>
+    <div class="ssect fullS">
+        <p>plan your jounery from here</p>
+        <div class="imgS">
+            <img src="https://www.pngmart.com/files/17/Travel-Icon-Transparent-Background.png" alt="">
+        </div>
+    </div>
+    <div class="eset"></div>
+    <div class="fsect fullS">
+        <div class="imgS">
+            <img src="https://www.pngmart.com/files/17/Travel-Icon-PNG-Transparent-Image.png" alt="">
+        </div>
+        <p>welcome you traveller</p>
+    </div>
+    <div class="eset"></div>
+    <h2 class="title">
+        types of adventures
+    </h2>
+    <div class="services">
+        <div class="cardS">
+            <div class="card">
+                <div class="image">
+                    <img src="https://media.istockphoto.com/photos/snowcapped-k2-peak-picture-id1288385045?k=20&m=1288385045&s=612x612&w=0&h=kcZXuKvLsEbbGakLlcZpolhBT7PyC9AQWiv2kZ7aHfQ="
+                        alt="">
+                </div>
+                <div class="text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa eaque veniam, saepe dolorum modi,
+                        corrupti iste exercitationem minima rem in porro nostrum, aut dolorem?</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="https://cdn2.wanderlust.co.uk/media/1037/forest-web.jpg?anchor=center&mode=crop&width=1200&height=0&rnd=132605629110000000"
+                        alt="">
+                </div>
+                <div class="text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa eaque veniam, saepe dolorum modi,
+                        corrupti iste exercitationem minima rem in porro nostrum, aut dolorem?</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Varanasiganga.jpg" alt="">
+                </div>
+                <div class="text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa eaque veniam, saepe dolorum modi,
+                        corrupti iste exercitationem minima rem in porro nostrum, aut dolorem?</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="https://media.istockphoto.com/photos/snowcapped-k2-peak-picture-id1288385045?k=20&m=1288385045&s=612x612&w=0&h=kcZXuKvLsEbbGakLlcZpolhBT7PyC9AQWiv2kZ7aHfQ="
+                        alt="">
+                </div>
+                <div class="text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa eaque veniam, saepe dolorum modi,
+                        corrupti iste exercitationem minima rem in porro nostrum, aut dolorem?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="aboutC" id="about">
+        <div class="about">
+            <div class="meimg">
+                <img src="https://i.pinimg.com/originals/c5/fa/b5/c5fab55fd2ae9c399b5693055e6e75bf.png" alt="">
+            </div>
+            <div class="aboutTC">
+                <p class="aboutT">
+                    my name is <span id="size">ashish sharma</span> <br>
+                    knows web developing very well!! <br>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="contact">
+        <div class="form">
+            <form action="">
+                <div class="email">
+                    <label for="email">email</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="opinion">
+                    <label for="idea">idea</label>
+                    <input type="text" id="idea" style="height: 120px;">
+                </div>
+                <div class="sub">
+                    <button type="submit">send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <h2 class="title" style="color: white;">useful link</h2>
+            <div class="links">
+                <a href="#">link</a>
+                <a href="#">link</a>
+                <a href="#">link</a>
+                <a href="#">link</a>
+            </div>
+            <h2 class="title" style="color: white;">follow us on</h2>
+            <div class="followC">
+                <a href="instagram">
+                    <ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="instagram">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a> 
+                <a href="instagram">
+                    <ion-icon name="logo-youtube"></ion-icon></a>
+                <a href="instagram">
+                    <ion-icon name="logo-twitter"></ion-icon></a>
+            </div>
+        </div>
+
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        let tag = document.getElementById('tag')
+        let nav = document.getElementById('menuLIST')
+        tag.addEventListener('click', () => {
+            if (nav.classList.contains('closing')) {
+                nav.classList.replace('closing', 'navOPEN');
+            }
+            else {
+                nav.classList.add("closing")
+                nav.classList.remove('navOPEN')
+            }
+        })
+        let lights = document.getElementById('lightwala');
+        let header = document.querySelector('.header');
+        lights.addEventListener('click', () => {
+
+        })
+    </script>
+</body>
+
+</html>

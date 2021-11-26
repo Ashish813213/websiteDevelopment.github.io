@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+    font-family: 'Baloo Bhai 2', cursive;
+    transition: all 100ms;
+}
+#section{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: chnage 4s steps(1) infinite ;
+    position: fixed;
+    z-index: 9999;
+
+}
+@keyframes chnage {
+    0%{
+        background-color: #0f0;
+    }
+    25%{
+        background-color: #f0f;
+    }
+    50%{
+        background-color: #ff0;
+    }
+    100%{
+        background-color: #ff4786;
+    }
+    
+}
+.loader{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: #000;
+    animation: anim 1s linear infinite ;
+}
+@keyframes anim {
+    0%{
+        transform: rotate(90deg)
+    }
+    50%,100%{
+        transform: rotate(0deg)
+    }
+}
+.loader div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    animation: animaton 
+    1s linear infinite;
+}
+@keyframes animaton {
+    0%{
+        transform: rotate(0deg)
+    }
+    50% ,100%{
+        transform: rotate(180deg)
+    }
+}
+.loader div:nth-child(1){
+    top: -100%;
+    left: -2px;
+    transform-origin:bottom right ;
+}
+.loader div:nth-child(1)::before{
+    background-color: #ff0;
+}
+.loader div:nth-child(2){
+    right: -100%;
+    top: -2px;
+    transform-origin:bottom left ;
+}
+.loader div:nth-child(2)::before{
+    background-color: #f0f;
+}
+.loader div:nth-child(3){
+    bottom: -100%;
+    left: 2px;
+    transform-origin:top left ;
+}
+.loader div:nth-child(3)::before{
+    background-color: #0f0;
+}
+.loader div:nth-child(4){
+    left: -100%;
+    top: 2px;
+    transform-origin:top right ;
+}
+.loader div:nth-child(4)::before{
+    background-color: #ff4786;
+}
+.loader:before,.loader div::before{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: #fff;
+} 
+
+.header {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.logo {
+    margin: 0 auto 0 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    font-size: 34px;
+    color: white;
+    font-weight: 800px;
+}
+
+.navC {
+    margin: 0 0 0 auto;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+#tag {
+    font-size: 30px;
+    color: white;
+    display: none;
+}
+
+nav ul li {
+    list-style: none;
+    font-size: 30px;
+    display: inline;
+    color: white;
+    margin: 0 4px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.2s;
+}
+ul li a{
+    color: white;
+    text-decoration: none;
+}
+nav ul li:hover {
+    font-weight: 700;
+    opacity: 1;
+    font-size: 35px;
+    transform: scale(1.2);
+}
+nav ul li:nth-child(1){
+    text-decoration: underline;
+}
+.fsection{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #dad2db;
+}
+.fsection .img {
+    height: 400px;
+    width: 400px;
+    margin: 0 60px;
+}
+.img img{
+    width: 100%;
+    margin: 0 50px;
+}
+.ssection{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ssection .img {
+    height: 400px;
+    width: 400px;
+}
+.ssection .img img{
+    width: 100%;
+}
+footer {
+    height: 300px;
+    width: 100%;
+    background-color: #153451;
+    padding: 25px 0px 0px 0px;
+    margin-top: 25px;
+    position: relative;
+}
+.footer {
+    font-size: 20px;
+    text-align: center;
+}
+.links {
+    margin-bottom: 10px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+    opacity: 0.7;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    color: white;
+    opacity: 1;
+}
+.followC a {
+    font-size: 30px;
+}
+.follow {
+    height: 27px;
+    width: 27px;
+    margin: 1px;
+    opacity: 0.8;
+}
+
+.follow:hover {
+    opacity: 1;
+}
+@media screen and (max-width:600px) {
+    #tag {
+        display: block;
+    }
+
+    nav ul {
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: rgba(53, 119, 180, 0.377);
+        top: 70px;
+        left: 0;
+        backdrop-filter: blur(2px);
+        height: 0px;
+        overflow: hidden;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin: 12px 0 12px 0;
+        font-size: 30px;
+        padding: 5px;
+    }
+
+    .closing {
+        height: 0px;
+    }
+
+    .navOPEN {
+        height: calc(100vh - 70px);
+    }
+
+    .cardS .card {
+        margin: 10px 0px;
+    }
+
+    .fullS {
+        height: auto;
+    }
+
+}
