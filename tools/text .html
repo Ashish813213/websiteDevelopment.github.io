@@ -214,7 +214,7 @@
         }
         let capital = () => {
             let sentence = textU.value;
-            let capitalizeString = (str) => str[0].toUpperCase() + str.slice(1).toLowerCase();
+            let capitalizeString = (str) => str[0].toUpperCase()+str.slice(1).toLowerCase();
             let words = sentence.split(' ').map(capitalizeString);
             let capitailzedSentence = words.join(' ');
             console.log(capitailzedSentence);
