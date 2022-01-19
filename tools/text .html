@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>convert text</title>
+    <link href="https://fonts.googleapis.com/css2?family=Neonderthaw&family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Neonderthaw&family=Raleway&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        body {
+            height: auto;
+            width: 100%;
+            background-color: #434343;
+        }
+
+        .navO {
+            width: 100%;
+            height: 75px;
+            background: #383dff;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            color: #6eff6a;
+            font-weight: 700;
+            font-size: 35px;
+            display: flex;
+        }
+
+        .logo p {
+            display: inline;
+            font-family: 'Neonderthaw', cursive;
+        }
+/* 
+        .logo p:nth-child(2) {
+            transform: rotateY(180deg);
+            color: #00ffd6;
+        }
+
+        .logo p:nth-child(4) {
+            transform: rotateX(-180deg);
+        } */
+
+        .over {
+            height: 100vh;
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .over .box {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .over .box textarea {
+            height: 300px;
+            width: 70%;
+            text-align: center;
+            resize: none;
+            overflow-y: auto;
+            margin: 7px 0px 10px 0px;
+        }
+        .over .controls {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .over .controls button {
+            height: 50px;
+            width: 110px;
+            font-size: 15px;
+            margin: 0 4px;
+            border: none;
+            border-radius: 4px;
+            background: green;
+            color:#fff;
+            -webkit-box-reflect: below 2px linear-gradient(transparent,transparent, transparent, white);
+            text-transform: capitalize;
+        }
+
+        .words {
+            font-size: 35px;
+            text-align: center;
+            text-transform: capitalize;
+            color: white;
+            text-shadow: 4px 4px #000;
+            z-index: 12;
+            padding: 10px;
+        }
+
+        .words span {
+            /* display: block; */
+            margin: 12px;
+        }
+
+        footer {
+            width: 100%;
+            background: grey;
+            color: black;
+            padding: 10px;
+        }
+        footer .tagl{
+            color: black;
+            text-shadow: 1px 1px #000f0f;
+            text-align: center;
+            text-transform: capitalize;
+        }
+        footer ul {
+            text-align: center;
+        }
+        footer ul li {
+            list-style: none;
+            display: inline;
+            text-align: center;
+        }
+        footer li a{
+            color: white;
+            text-decoration: none;
+        }
+        .followC{
+            text-align: center;
+            font-size:29px;
+        }
+        .followC a{
+            color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navO">
+        <div class="logo">
+            <p>T</p>
+            <p>E</p>
+            <p>X</p>
+            <p>T</p>
+        </div>
+    </header>
+    <div class="over">
+        <div class="box">
+            <textarea id="userT"></textarea>
+        </div>
+        <div class="controls">
+            <button id="uC" onclick="uppercase()">uppercase</button>
+            <button id="lC" onclick="lowerercase()">lowercase</button>
+            <button id="CC" onclick="capital()">capitalize</button>
+            <button id="sC" onclick="sentence()">sentenced</button>
+            <button id="fC" onclick="fancy()">not working</button>
+            <button id="copy" onclick="copy()">copy!!</button>
+            <button id="testing">test</button>
+        </div>
+        <h2 class="words">
+            <span id="word">0</span><span>words</span> <br>
+            <span id="char">0</span><span>charcters</span> <br>
+        </h2>
+    </div>
+    <footer>
+        <h2 class="tagl">
+            useful links
+            </h1>
+            <ul>
+                <li><a href="#">here</a></li>
+                <li><a href="#">here</a></li>
+                <li><a href="#">here</a></li>
+                <li><a href="#">here</a></li>
+            </ul>
+            <h2 class="tagl"> follow us on</h2>
+            <div class="followC">
+                <a href="instagram">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+                <a href="instagram">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+                <a href="instagram">
+                    <ion-icon name="logo-youtube"></ion-icon>
+                </a>
+                <a href="instagram">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+            </div>
+
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        let textU = document.getElementById('userT');
+        textU.addEventListener('input', function () {
+            let text = this.value;
+            let char = text.length;
+            document.getElementById('char').innerHTML = char;
+            text = text.trim();
+            let words = text.split(" ");
+            let cleanlist = words.filter(function (el) {
+                return el != "";
+            })
+            document.getElementById('word').innerHTML = cleanlist.length;
+        })
+        let uppercase = () => {
+            let getD = textU.value;
+            textU.value = getD.toUpperCase();
+            console.log(getD.toUpperCase());
+        }
+        let lowerercase = () => {
+            let getD = textU.value;
+            textU.value = getD.toLowerCase()
+            console.log(getD.toLowerCase())
+        }
+        let capital = () => {
+            let sentence = textU.value;
+            let capitalizeString = (str) => str[0].toUpperCase() + str.slice(1).toLowerCase();
+            let words = sentence.split(' ').map(capitalizeString);
+            let capitailzedSentence = words.join(' ');
+            console.log(capitailzedSentence);
+            textU.value = capitailzedSentence;
+        }
+        let sentence = () => {
+            let getD = textU.value;
+            textU.value = getD.charAt(0).toUpperCase() + getD.slice(1).toLowerCase();
+            console.log(textU.value)
+        }
+        let fancy = () => {
+            let sentence = textU.value;
+            let clean = sentence.trim()
+            let maker = clean.split(' ');
+            console.log(maker);
+            for (let i = 0; i < maker.length; i++) {
+                for (let j = 0; j < maker[i].length; j++) {
+                    let ji = Math.floor(Math.random() * maker[i].length)
+                    console.log(ji);
+                    let product = maker[i][ji - 1] + maker[i][ji].toUpperCase() + maker[i].slice(ji + 1).toLowerCase();
+                    console.log(product);
+                    maker[i][j] = product
+                    console.log(maker[i][ji]);
+                }
+            }
+        }
+        let copy = ()=>{
+            let value1 = textU;
+            console.log(value1);
+            value1.select();
+            value1.setSelectionRange(0,101010);
+            document.execCommand('copy')
+        }
+    </script>
+</body>
+
+</html>
