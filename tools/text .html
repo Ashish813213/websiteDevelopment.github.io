@@ -42,6 +42,7 @@
             display: inline;
             font-family: 'Neonderthaw', cursive;
         }
+
         .over {
             height: 100vh;
             width: 100%;
@@ -96,6 +97,7 @@
         }
 
         .words span {
+            /* display: block; */
             margin: 12px;
         }
 
@@ -151,9 +153,7 @@
             <button id="lC" onclick="lowerercase()">lowercase</button>
             <button id="CC" onclick="capital()">capitalize</button>
             <button id="sC" onclick="sentence()">sentenced</button>
-            <button id="fC" onclick="fancy()">not working</button>
             <button id="copy" onclick="copy()">copy!!</button>
-            <button id="testing">test</button>
         </div>
         <h2 class="words">
             <span id="word">0</span><span>words</span> <br>
@@ -214,7 +214,8 @@
         }
         let capital = () => {
             let sentence = textU.value;
-            let capitalizeString = (str) => str[0].toUpperCase()+str.slice(1).toLowerCase();
+            let capitalizeString = (str) => str.charAt(0).toUpperCase() +
+             str.slice(1).toLowerCase();
             let words = sentence.split(' ').map(capitalizeString);
             let capitailzedSentence = words.join(' ');
             console.log(capitailzedSentence);
@@ -224,22 +225,6 @@
             let getD = textU.value;
             textU.value = getD.charAt(0).toUpperCase() + getD.slice(1).toLowerCase();
             console.log(textU.value)
-        }
-        let fancy = () => {
-            let sentence = textU.value;
-            let clean = sentence.trim()
-            let maker = clean.split(' ');
-            console.log(maker);
-            for (let i = 0; i < maker.length; i++) {
-                for (let j = 0; j < maker[i].length; j++) {
-                    let ji = Math.floor(Math.random() * maker[i].length)
-                    console.log(ji);
-                    let product = maker[i][ji - 1] + maker[i][ji].toUpperCase() + maker[i].slice(ji + 1).toLowerCase();
-                    console.log(product);
-                    maker[i][j] = product
-                    console.log(maker[i][ji]);
-                }
-            }
         }
         let copy = ()=>{
             let value1 = textU;
