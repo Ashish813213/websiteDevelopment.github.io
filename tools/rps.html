@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png">
+    <title>Rock paper scisor GAME</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-transform: capitalize;
+        }
+
+        body {
+            height: 100vh;
+            background-color: #00000f;
+        }
+
+        /* loader is here start */
+        #section {
+            position: fixed;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: chnage 4s steps(1) infinite;
+            z-index: 9999;
+        }
+
+        @keyframes chnage {
+            0% {
+                background-color: #0f0;
+            }
+
+            25% {
+                background-color: #f0f;
+            }
+
+            50% {
+                background-color: #ff0;
+            }
+
+            100% {
+                background-color: #ff4786;
+            }
+
+        }
+
+        .loader {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            background: #000;
+            animation: anim 1s linear infinite;
+        }
+
+        @keyframes anim {
+            0% {
+                transform: rotate(90deg)
+            }
+
+            50%,
+            100% {
+                transform: rotate(0deg)
+            }
+        }
+
+        .loader div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            animation: animaton 1s linear infinite;
+        }
+
+        @keyframes animaton {
+            0% {
+                transform: rotate(0deg)
+            }
+
+            50%,
+            100% {
+                transform: rotate(180deg)
+            }
+        }
+
+        .loader div:nth-child(1) {
+            top: -100%;
+            left: -2px;
+            transform-origin: bottom right;
+        }
+
+        .loader div:nth-child(1)::before {
+            background-color: #ff0;
+        }
+
+        .loader div:nth-child(2) {
+            right: -100%;
+            top: -2px;
+            transform-origin: bottom left;
+        }
+
+        .loader div:nth-child(2)::before {
+            background-color: #f0f;
+        }
+
+        .loader div:nth-child(3) {
+            bottom: -100%;
+            left: 2px;
+            transform-origin: top left;
+        }
+
+        .loader div:nth-child(3)::before {
+            background-color: #0f0;
+        }
+
+        .loader div:nth-child(4) {
+            left: -100%;
+            top: 2px;
+            transform-origin: top right;
+        }
+
+        .loader div:nth-child(4)::before {
+            background-color: #ff4786;
+        }
+
+        .loader:before,
+        .loader div::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            background-color: #fff;
+        }
+
+        /* here is content css */
+        .sbo-c {
+            display: flex;
+            justify-content: center;
+        }
+
+        .sbo {
+            width: 100px;
+            height: 60px;
+            display: flex;
+            background-color: yellow;
+            padding: 10px;
+            margin: 3px;
+        }
+
+        .p {
+            display: inline;
+            background-color: black;
+            width: 40px;
+            margin: 5px;
+            font-size: 35px;
+            color: white;
+            text-align: center;
+        }
+
+        .bot-c {
+            display: flex;
+        }
+
+        .player {
+            font-size: 30px;
+        }
+
+        .option-c {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 210px;
+            bottom: 0px;
+        }
+
+        .options {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 216px;
+        }
+
+        .option {
+            width: 150px;
+            height: 150px;
+            background-color: greenyellow;
+            margin: 4px;
+            text-align: center;
+            color: white;
+            font-size: 29px;
+        }
+
+        .option:active {
+            transform: scale(1.01);
+        }
+
+        .option p {
+            font-size: 100px;
+        }
+        .rps {
+            display: none;
+            height: 10px;
+        }
+
+        .sci {
+            font-size: 118px;
+            color: #000;
+        }
+
+        #what {
+            color: #fff;
+        }
+
+        .reset {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            text-align: center;
+            margin-left: auto;
+            font-size: 30px;
+            color: white;
+            font-weight: 900;
+        }
+
+        .tcenter {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <section id="section">
+        <div class="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </section> -->
+    <!-- leaderboard -->
+    <div class="sbo-c">
+        <p class="player">you</p>
+        <div class="sbo">
+            <div class="you p" id="you">0</div>
+            <div class="comp p" id="bot">0</div>
+        </div>
+        <p class="player">bot</p>
+    </div>
+    <!-- leaderboard ends -->
+    <!-- bot options -->
+    <h2>what bot chooses</h2>
+    <div class="bot-c">
+        <div id="botop" class="option">
+            <h1 id="botC" style="font-size: 100px; text-align: center;">?</h1>
+        </div>
+        <button id="reset" onclick="resetop()" class="reset"> reset</button>
+    </div>
+    <!-- bot options ends -->
+    <div class="screen">
+        <h1 class="winning tcenter" id="what"></h1>
+    </div>
+    <!-- user options  -->
+    <div class="option-c">
+        <h1 class="rps tcenter" id="rps">choose your weapon</h1>
+        <div class="options">
+            <div class="option" id="rock">
+                    <p class="topt">&#9994;</p>
+            </div>
+            <div class="option" id="paper">
+                <p class="topt">&#9995;</p>
+            </div>
+            <div class="option" id="scisor">
+                <p class="topt">&#9996;</p>
+            </div>
+        </div>
+    </div>
+    <!-- user opttion ends -->
+    <script>
+        // for loader 
+        // window.addEventListener('DOMContentLoaded', () => {
+        //     let loader = document.getElementById('section')
+        //     setTimeout(() => {
+        //         loader.style.display = "none"
+        //     }, 3000);
+        // })
+        // for getting elemnets
+        const rock = document.getElementById('rock');
+        const paper = document.getElementById('paper');
+        const sci = document.getElementById('scisor');
+        const reset = document.getElementById('reset');
+        const what = document.getElementById('what');
+        const rps = document.getElementById('rps')
+        const botS = document.getElementById('botC');
+        const bimg = document.getElementById('bimg')
+        const you = document.getElementById('you');
+        const bot = document.getElementById('bot');
+        let botArr = ['rock', 'paper', 'scisor'];
+        let youScore = 0;
+        let botScore = 0;
+
+        // there function for each 
+        rock.addEventListener('click', () => {
+            let botC = botArr[Math.floor(Math.random() * 3)];
+            console.log(botC);
+            if (botC == 'rock') {
+                console.log('its a tie');
+                what.innerText = "its a tie"
+                console.log("rock block");
+                botS.innerHTML = "&#9994;"
+            }
+            else if (botC == 'paper') {
+                console.log('bot wins');
+                botScore = botScore + 1;
+                console.log(botScore);
+                bot.innerText = botScore;
+                what.innerText = "bot wins"
+                console.log("rock block");
+                botS.innerHTML = "&#9995;";
+            }
+            else if (botC == 'scisor') {
+                console.log('player wins');
+                youScore = youScore + 1;
+                console.log(youScore);
+                you.innerText = youScore;
+                what.innerText = "you win"
+                console.log("rock block");
+                botS.innerHTML = "&#9996;";
+            }
+            if (youScore == 10) {
+                alert("you win by 10");
+                resetop()
+            }
+            else if (botScore == 10) {
+                alert("you lose ")
+                resetop()
+            }
+        })
+        paper.addEventListener('click', () => {
+            let botC = botArr[Math.floor(Math.random() * 3)];
+            console.log(botC);
+            botS.innerText = botC;
+            if (botC == 'paper') {
+                console.log('its a tie');
+                what.innerText = "its a tie"
+                console.log("paper block");
+                botS.innerHTML = "&#9995;";
+
+            }
+            else if (botC == 'scisor') {
+                console.log('bot wins');
+                botScore = botScore + 1;
+                console.log(botScore);
+                bot.innerText = botScore;
+                what.innerText = "bot wins"
+                console.log("paper block");
+                botS.innerHTML = "&#9996;";
+            }
+            else if (botC == 'rock') {
+                console.log('player wins');
+                youScore = youScore + 1;
+                console.log(youScore);
+                you.innerText = youScore;
+                what.innerText = "you win"
+                console.log("paper block");
+                botS.innerHTML = "&#9994;"
+            }
+            if (youScore == 10) {
+                alert("you win by 10");
+                resetop()
+            }
+            else if (botScore == 10) {
+                alert("you lose ")
+                resetop()
+            }
+        })
+        scisor.addEventListener('click', () => {
+            let botC = botArr[Math.floor(Math.random() * 3)];
+            console.log(botC);
+            botS.innerText = botC;
+            if (botC == 'scisor') {
+                console.log('its a tie');
+                what.innerText = "its a tie"
+                console.log("scisor block");
+                botS.innerHTML = "&#9996;";
+            }
+
+            else if (botC == 'paper') {
+                console.log('player wins');
+                youScore = youScore + 1;
+                console.log(youScore);
+                you.innerText = youScore;
+                what.innerText = "you win"
+                console.log("scisor block");
+                botS.innerHTML = "&#9995;";
+            }
+            else if (botC == 'rock') {
+                console.log('bot wins wins');
+                botScore = botScore + 1;
+                console.log(botScore);
+                bot.innerText = botScore;
+                what.innerText = "bot wins"
+                console.log("scisor block");
+                botS.innerHTML = "&#9994;"
+            }
+            if (youScore == 10) {
+                alert("you win by 10");
+                resetop()
+            }
+            else if (botScore == 10) {
+                alert("you lose ")
+                resetop()
+            }
+        })
+
+
+
+
+
+        function resetop() {
+            youScore = 0;
+            botScore = 0;
+            bot.innerText = botScore;
+            you.innerText = youScore;
+            what.innerText = "";
+            botS.innerText = "?"
+        }
+
+    </script>
+</body>
+
+</html>
