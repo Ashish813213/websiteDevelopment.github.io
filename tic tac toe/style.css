@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    font-family: 'Tilt Prism', cursive;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: orange;
+    position: absolute;
+}
+
+.play {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    height: 45px;
+    width: 100px;
+    background-color: #25c525;
+    border: 1px solid yellow;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+}
+
+.centerline {
+    width: 100%;
+    height: 90%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px;
+}
+
+@media only screen and (max-width:500px) {
+    .centerline{
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px;
+    }
+    .boxes{
+        height: 100px;
+        width: 100px;
+    }
+}
+@media only screen and (min-width:500px) {
+    .boxes{
+        height: 200px;
+        width: 200px;
+        background-color: red;
+    }
+}
+
+.boxes {
+    /* height: 200px;
+    width: 200px; */
+    background-color: rgb(220, 228, 61);
+    margin: 2px;
+    border: 10px solid white;
+    border-radius: 10px;
+    font-size: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Xclass {
+    color: crimson;
+
+}
+
+.Oclass {
+    color: #1408ff;
+}
+
+#box1 {
+    border-top: 0px;
+    border-left: 0px;
+}
+
+#box2 {
+    border-top: 0px;
+}
+
+#box3 {
+    border-top: 0px;
+    border-right: 0px;
+}
+
+#box4 {
+    border-left: 0px;
+}
+
+#box6 {
+    border-right: 0px;
+}
+
+#box7 {
+    border-bottom: 0px;
+    border-left: 0px;
+}
+
+#box8 {
+    border-bottom: 0px;
+}
+
+#box9 {
+    border-bottom: 0px;
+    border-right: 0px;
+}
+
+.alertb{
+    width: 100%;
+    height: 100vh;
+    background-color: green;
+    color: gold;
+    font-size: 80px;
+    text-align: center;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: absolute;
+}
+.alertX{
+    background-color: green;
+    color: crimson;
+}
+.alertO{
+    color: indigo;
+}
